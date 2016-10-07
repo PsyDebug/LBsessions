@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>Base</title>
+        <meta charset="utf-8" />
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" type = "text/css"/>
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+        <style type="text/css">
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+hr {
+    color: red; /* Цвет линии для остальных браузеров */
+    background-color: black; /* Цвет линии для браузера Firefox и Opera */
+    height: 2px; /* Толщина линии */
+    width:50%;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+        </style>
+</head>
+
+ <body>
+        <div class="container-fluid" style="min-height:95%; ">
+
+      <form class="form-signin" method="post" action="/base/signin/">
+                 {% csrf_token %}  {{ form }}
+
+        <label for="inputEmail" class="sr-only">Логин</label>
+        <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Логин" required autofocus>
+<br>        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Пароль" required>
+<br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+      </form>
+
+    </div> <!-- /container -->
+
+<footer><center>
+                <div class="container-fluid" >
+                        <p><a href="http://avk-com.ru" target="blank">Сайт АВК</a></p>
+
+                </div>
+</center>
+        </footer>
+  </body>
+</html>

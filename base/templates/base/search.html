@@ -1,0 +1,30 @@
+{% extends "base/header.html" %}
+{% block content %}
+<table class="table">
+<tr>
+    <td><strong></strong></td>
+    <td><strong>vg_id</strong</td>
+    <td><strong>login</strong></td>
+    <td><strong>ip</strong></td>
+    <td><strong>start_time</strong></td>
+    <td><strong>shape</strong></td>
+    <td><strong>mac</strong></td>
+
+ </tr>
+{% for c in search %}
+<tr>
+<td><span class="glyphicon glyphicon-stats" aria-hidden="true" onclick="send({{c.0}});"></span></td>
+{% for d in c %}
+        <td> {{d}}</td>
+{% endfor %}
+</tr>
+    {% endfor %}
+
+</table>
+
+
+ 
+{% include "base/includes/hist.html" %} 
+
+
+{% endblock %}

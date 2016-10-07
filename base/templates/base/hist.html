@@ -1,0 +1,20 @@
+{% block content %}
+<table class="table">
+<tr>
+    <td><strong>date</strong</td>
+    <td><strong>comment</strong></td>
+    <td><strong>ip</strong></td>
+    <td><strong>mac</strong></td>
+    <td><strong>nas</strong></td>
+ </tr>
+{% for cc in sear %}
+
+<tr>
+{% for dd in cc %}
+        <td> {{dd}}</td>
+{% endfor %}
+</tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
